@@ -1,0 +1,11 @@
+# Demo files
+tracker/demo_report.html
+tracker/demo_class_report.html
+
+# Database (per-instance, not shared)
+tracker/progress.db
+
+# Python cache
+__pycache__/
+*.pyc
+tests/__pycache__/

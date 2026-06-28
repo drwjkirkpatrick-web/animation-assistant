@@ -4,9 +4,55 @@ An AI-powered assistant that helps kids aged 10-17 learn computer animation. Thi
 
 ## What's Here
 
+## Progress Tracker, Achievement System & Standards-Aligned Reports
+
+### `tracker/`
+- **progress_tracker.py** — Student progress tracker with achievement/badge system and printable HTML reports aligned to Raspberry Pi Foundation computing taxonomy and Kenya CBC Computer Science curriculum.
+
+```bash
+# Register students
+python tracker/progress_tracker.py add_student --name "Amani" --age 13 --grade 8 --school "Mombasa Primary"
+
+# Record module progress (CBC 4-level rubric: BE, AE, ME, EE)
+python tracker/progress_tracker.py record --student-id S001 --module 3 --level ME --notes "Great walk cycle"
+
+# View badges and RPF tier
+python tracker/progress_tracker.py badges --student-id S001
+
+# Generate printable HTML progress report
+python tracker/progress_tracker.py report --student-id S001 --output report.html
+
+# Generate class-level report
+python tracker/progress_tracker.py class-report --output class_report.html
+
+# List all students
+python tracker/progress_tracker.py list-students
+```
+
+### Standards Alignment
+
+The tracker maps all 48 modules to two standards frameworks:
+
+- **Raspberry Pi Foundation Computing Taxonomy** — 11 content strands (programming, algorithms, creating media, safety, AI, etc.) + 5 Digital Making strands + 4 progression levels (Creator → Builder → Developer → Maker)
+- **Kenya CBC Computer Science Curriculum** — 4 strands (Foundation, Networks, Software, Programming) + 7 core competencies + 4-level assessment rubric (BE/AE/ME/EE)
+
+Full mapping in `research/standards-mapping.md`.
+
+### Achievement System
+
+30 badges across 5 tiers:
+- **Creator** (3 badges) — first animation, tool exploration, first export
+- **Builder** (4 badges) — squash, arcs, timing, weight
+- **Developer** (6 badges) — walk cycle, anticipation, follow-through, mood, lip sync, voice
+- **Maker** (11 badges) — storyboard, rigging, effects, sound, game animation, contests, Pi pioneer, physics master, mentor, style, short film
+- **CBC Competency** (6 badges) — digital citizen, creative thinker, problem solver, collaborator, code creator, AI ethicist
+
+Badges auto-award when a student reaches ME or EE on relevant modules. Reports are printable (CSS @media print) and show progress bars per strand.
+
 ### `research/`
-- **animation-tools-landscape.md** — Survey of 7 animation tools for ages 10-17, with learning progression paths and the 12 Principles framework.
-- **gap-analysis.md** — Three-pass gap analysis identifying 30 missing areas, all built as modules 19-48.
+- **animation-tools-landscape.md** — Survey of 7 animation tools for ages 10-17
+- **gap-analysis.md** — Three-pass gap analysis identifying 30 missing areas (all built as modules 19-48)
+- **standards-mapping.md** — Full alignment of all 48 modules to RPF taxonomy and Kenya CBC curriculum
 
 ### `prompts/`
 Forty-eight testable system prompts covering the full assistant experience:
