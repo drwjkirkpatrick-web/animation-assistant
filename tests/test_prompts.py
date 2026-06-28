@@ -1161,6 +1161,126 @@ TEST_CASES = [
              "expect": "Add slows; hold shots longer; establish before action; decelerate after climax"},
         ]
     },
+    # Prompt 49: Rotoscoping & Video Reference
+    {
+        "prompt_file": "49-rotoscoping.md",
+        "tests": [
+            {"name": "first_rotoscope", "input": {"age": 12, "tool": "Krita", "question": "how do I start"}, "expect": "Record phone video; import to Krita; trace every 2nd-3rd frame; add style; keep under 5 sec"},
+            {"name": "every_frame_mistake", "input": {"age": 14, "tool": "Krita", "motion": "running"}, "expect": "Trace key frames not every frame; every 2nd for fast; 24-36 frames not 72"},
+            {"name": "should_i_rotoscope", "input": {"age": 11, "motion": "blink"}, "expect": "Hand-animate; too simple for rotoscope; save for complex motion"},
+            {"name": "dance_sequence", "input": {"age": 15, "tool": "Blender", "motion": "dance"}, "expect": "Grease Pencil; every 3rd frame; trace timing then exaggerate in-betweens"},
+            {"name": "scratch_rotoscope", "input": {"age": 10, "tool": "Scratch", "motion": "waving"}, "expect": "Screenshot key frames; import as backdrops; trace; 8-12 fps"},
+            {"name": "stiff_trace_fix", "input": {"age": 16, "tool": "Krita", "problem": "stiff"}, "expect": "Add style; simplify lines; exaggerate poses beyond video; trace is starting not finish"},
+        ]
+    },
+    # Prompt 50: Motion Capture & Mocap
+    {
+        "prompt_file": "50-motion-capture.md",
+        "tests": [
+            {"name": "foot_sliding_mocap", "input": {"age": 14, "problem": "feet sliding"}, "expect": "Foot plant fix; IK lock; keyframe foot position; release on lift-off"},
+            {"name": "stiff_mocap", "input": {"age": 15, "problem": "stiff"}, "expect": "Add exaggeration; push key poses; bigger arcs; amplify anticipation/follow-through"},
+            {"name": "jittery_data", "input": {"age": 13, "problem": "jittery"}, "expect": "Smooth curves; average spikes; re-key; tracking noise explanation"},
+            {"name": "when_to_mocap", "input": {"age": 16, "question": "when should I use mocap"}, "expect": "Realistic human motion; complex actions; hand-animate for cartoon; mocap=90% polish=10%"},
+            {"name": "free_tools", "input": {"age": 12, "question": "free mocap tools"}, "expect": "Rokoko Vision; DeepMotion; Blender cleanup; bvh/fbx export"},
+            {"name": "performer_credit", "input": {"age": 17, "question": "do I credit my friend"}, "expect": "Yes; mocap performers are actors; acknowledge the performer"},
+        ]
+    },
+    # Prompt 51: Balance, Weight Shift & Ground Contact
+    {
+        "prompt_file": "51-balance-weight-shift.md",
+        "tests": [
+            {"name": "floaty_walk", "input": {"age": 14, "problem": "floaty"}, "expect": "Weight shift: hips over stance foot; no shift=gliding; contact shadows; feet plant"},
+            {"name": "sliding_feet", "input": {"age": 15, "problem": "sliding"}, "expect": "Lock planted foot; body moves over foot; heel strike to flat to toe push-off"},
+            {"name": "no_weight", "input": {"age": 13, "problem": "no weight"}, "expect": "Foot compression; ankle bends; weight distribution to stance foot; contact shadow"},
+            {"name": "one_foot_balance", "input": {"age": 12, "scene": "one foot"}, "expect": "CoG over single support foot; hips shift; 3 points of balance"},
+            {"name": "fake_walk", "input": {"age": 16, "problem": "walk fake"}, "expect": "Hips shift side to side; walking=controlled falling; arm swing counterbalances"},
+            {"name": "general_balance", "input": {"age": 13, "question": "general"}, "expect": "5 keys overview; stand-on-one-foot demo; CoG over support; feet plant"},
+        ]
+    },
+    # Prompt 52: Exaggeration vs Realism
+    {
+        "prompt_file": "52-exaggeration-realism.md",
+        "tests": [
+            {"name": "comedy_style", "input": {"age": 14, "project": "comedy"}, "expect": "Level 4 cartoon; big squash/stretch; physics still apply; consistent"},
+            {"name": "photoreal_vfx", "input": {"age": 16, "project": "VFX"}, "expect": "Level 1 photorealistic; minimal exaggeration; 100% real physics; Odd Rule"},
+            {"name": "spider_verse", "input": {"age": 15, "reference": "Spider-Verse"}, "expect": "Level 3 stylized; selective amplification; follows physics; consistent baseline"},
+            {"name": "jump_three_levels", "input": {"age": 13, "scene": "jumping"}, "expect": "Exercise: animate at Levels 2,3,4; keep Odd Rule; change scale only"},
+            {"name": "broke_believability", "input": {"age": 14, "problem": "looks wrong"}, "expect": "Check: still accelerating? weighted recovery? amplified not ignored; dial back"},
+            {"name": "inconsistent_scene", "input": {"age": 16, "problem": "disjointed"}, "expect": "Pick one baseline; spike up for beats only; story decides; don't jump levels"},
+        ]
+    },
+    # Prompt 53: Cloth, Hair & Secondary Motion
+    {
+        "prompt_file": "53-cloth-hair-simulation.md",
+        "tests": [
+            {"name": "cloth_stiff", "input": {"age": 14, "tool": "hand-drawn", "problem": "cape stiff"}, "expect": "Delay principle; body leads, cape follows 2-4 frames; arcs; wind ripple"},
+            {"name": "hair_floating", "input": {"age": 13, "problem": "hair floating"}, "expect": "Gravity: hair hangs down; lighter strands move more; lags head turns 2-3 frames"},
+            {"name": "blender_cape", "input": {"age": 16, "tool": "Blender", "problem": "glitch"}, "expect": "Bake simulation before render; check pin group; rebake after body changes"},
+            {"name": "cloth_same_time", "input": {"age": 15, "problem": "glued"}, "expect": "Offset cloth 3-4 frames after body; body is PRIMARY, cloth is SECONDARY"},
+            {"name": "no_settle", "input": {"age": 12, "problem": "hair stops instantly"}, "expect": "Follow-through: hair overshoots 4-6 frames, swings back, settles; head first, hair last"},
+            {"name": "general_cloth", "input": {"age": 14, "question": "how real cloth"}, "expect": "Secondary after primary; hand-drawn=body then arcs; Blender=cloth sim+pin+bake"},
+        ]
+    },
+    # Prompt 54: Micro-Expressions & Subtle Performance
+    {
+        "prompt_file": "54-micro-expressions.md",
+        "tests": [
+            {"name": "blank_face", "input": {"age": 15, "problem": "face dead"}, "expect": "Half-blink on thought; 60% lid, 1-2 frames; at listening beat; verify full speed"},
+            {"name": "hidden_emotion", "input": {"age": 16, "problem": "subtext not landing"}, "expect": "Mask-and-leak; hold calm, flash sadness 3 frames, control back 6; baseline first"},
+            {"name": "too_obvious", "input": {"age": 14, "problem": "too obvious"}, "expect": "Reduce to 2-4 frames; don't hold; flash faster, control back slower; check full speed"},
+            {"name": "suspicious", "input": {"age": 17, "scene": "lied to"}, "expect": "Micro-squint + half-blink; slow head turn; the 'not buying it' read"},
+            {"name": "anger_held", "input": {"age": 15, "scene": "argument"}, "expect": "Lip press + nostril flare + micro-squint; calm mask; leak on trigger line"},
+            {"name": "suppressed_joy", "input": {"age": 16, "scene": "good news"}, "expect": "Corner 1-2px up 2-3 frames, control back 4-6; under-eye compression; serious mask"},
+        ]
+    },
+    # Prompt 55: Nature & Found Objects Stop Motion
+    {
+        "prompt_file": "55-nature-found-objects.md",
+        "tests": [
+            {"name": "outdoor_beginner", "input": {"age": 10, "setting": "outdoor", "materials": "leaves stones"}, "expect": "Respectful collecting; stone+leaf character; lock focus; embrace wind; 10-min exercise"},
+            {"name": "found_object_char", "input": {"age": 12, "materials": "keys coins buttons"}, "expect": "Object-to-character mapping; personality from material; small increments; stabilize with wax"},
+            {"name": "lifecycle", "input": {"age": 14, "goal": "lifecycle"}, "expect": "Seed to sprout to plant to flower; swapping pieces; science tie-in; plan beats"},
+            {"name": "pi_timelapse", "input": {"age": 16, "tool": "Raspberry Pi", "goal": "timelapse"}, "expect": "picamera loop; frame interval; ffmpeg; weatherproof; STEM crossover"},
+            {"name": "wind_problem", "input": {"age": 13, "problem": "wind"}, "expect": "Sheltered spot or windbreak; embrace movement; cloudy days for even light; short sessions"},
+            {"name": "env_message", "input": {"age": 15, "goal": "environmental message"}, "expect": "Trash-as-character; pollution narrative; deforestation theme; end card message"},
+        ]
+    },
+    # Prompt 56: Observational Sketching
+    {
+        "prompt_file": "56-observational-sketching.md",
+        "tests": [
+            {"name": "stiff_gestures", "input": {"age": 14, "problem": "stiff"}, "expect": "Line of action first; 30s gestures; stop details; Level 2 continuous"},
+            {"name": "where_to_start", "input": {"age": 12, "question": "where to start"}, "expect": "Zoo or dog park; 30s gestures; Level 1 look-memorize-draw; carry sketchbook"},
+            {"name": "animals_fast", "input": {"age": 15, "subject": "dogs"}, "expect": "Level 1 look-memorize-draw; watch full cycle; draw same action 5 times; dogs repeat"},
+            {"name": "cant_memory", "input": {"age": 13, "problem": "cant draw from memory"}, "expect": "Level 1 training; 3-sec observation then draw; memory builds with practice"},
+            {"name": "life_vs_video", "input": {"age": 16, "question": "can I use video"}, "expect": "Life is primary; trains eye-brain-hand in 3D; video flattens; use video to supplement"},
+            {"name": "people_walking", "input": {"age": 14, "subject": "people walking"}, "expect": "Cafe; catch stride line of action in 2 sec; Level 2 continuous; note weight shift"},
+        ]
+    },
+    # Prompt 57: Photogrammetry & 3D Scanning
+    {
+        "prompt_file": "57-photogrammetry.md",
+        "tests": [
+            {"name": "first_scan", "input": {"age": 14, "object": "shoe", "goal": "animate"}, "expect": "RealityScan app; 40 photos all angles; even light; OBJ export; Blender import"},
+            {"name": "shiny_object", "input": {"age": 15, "object": "trophy"}, "expect": "Shiny won't scan; matte spray or different object; expect holes"},
+            {"name": "game_env", "input": {"age": 16, "object": "rock", "goal": "game env"}, "expect": "RealityCapture or Meshroom; 50+ photos; FBX export; Blender import; no rig needed"},
+            {"name": "transparent", "input": {"age": 13, "object": "glass"}, "expect": "Transparent won't work; explain why; suggest solid alternative like clay"},
+            {"name": "toy_movie", "input": {"age": 15, "goal": "scan toys"}, "expect": "RealityScan each toy; 30-40 photos; OBJ; Blender; rig with armature; animate cast"},
+            {"name": "food_dancing", "input": {"age": 14, "object": "banana", "goal": "dance"}, "expect": "Scan banana (matte); 35 photos; OBJ; Blender; keyframe rotation; animate dancing"},
+        ]
+    },
+    # Prompt 58: Light, Shadow & Ambient Occlusion
+    {
+        "prompt_file": "58-light-shadow-study.md",
+        "tests": [
+            {"name": "char_floats", "input": {"age": 14, "problem": "floats"}, "expect": "Contact shadow; dark patch at feet; sharpest at contact, softens outward"},
+            {"name": "looks_flat", "input": {"age": 13, "problem": "flat"}, "expect": "Ambient occlusion in crevices; under chin, between fingers; soft darkness in folds"},
+            {"name": "shadows_wrong", "input": {"age": 15, "problem": "shadows wrong"}, "expect": "Shadow color=complement of light; warm light=blue shadows; never black; reflected light"},
+            {"name": "no_separation", "input": {"age": 16, "problem": "blends into bg"}, "expect": "Three-point lighting; rim light from behind; key/fill/rim explained"},
+            {"name": "where_start", "input": {"age": 12, "question": "how to learn lighting"}, "expect": "Observation: white egg on white paper under one lamp; find 5 zones; photograph; move lamp"},
+            {"name": "fake_render", "input": {"age": 17, "tool": "blender", "problem": "fake"}, "expect": "AO pass + contact shadows; colored shadows not black; fill light; bounce light settings"},
+        ]
+    },
 ]
 
 PROMPTS_DIR = Path(__file__).parent.parent / "prompts"

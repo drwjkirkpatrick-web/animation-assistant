@@ -1,6 +1,6 @@
 # Animation Assistant
 
-An AI-powered assistant that helps kids aged 10-17 learn computer animation. This repo contains 48 prompt designs, research, and a test harness for building and evaluating the assistant.
+An AI-powered assistant that helps kids aged 10-17 learn computer animation. This repo contains 58 prompt designs, research, and a test harness for building and evaluating the assistant.
 
 ## What's Here
 
@@ -125,8 +125,22 @@ Forty-eight testable system prompts covering the full assistant experience:
 | 47 | AI Ethics & Animation Tools | When AI helps vs hurts, learning test, portfolio honesty |
 | 48 | Pacing & Rhythm | Fast/medium/slow, contrast, emotional wave, shot duration |
 
+#### Gap-Fill — Fourth Pass: Real-World Motion & Realism (49-58)
+| # | Prompt | What It Does |
+|---|--------|-------------|
+| 49 | Rotoscoping & Video Reference | Trace real video frame by frame — the direct bridge from real motion to animation |
+| 50 | Motion Capture & Mocap | Free AI mocap tools, cleanup, when to use vs hand-animate, performer ethics |
+| 51 | Balance, Weight Shift & Ground Contact | CoG over support foot, weight shift, foot planting, grounded vs floaty |
+| 52 | Exaggeration vs Realism | 5-level believability spectrum, how much to push, consistent stylization |
+| 53 | Cloth, Hair & Secondary Motion | Delay principle, Blender cloth sim, hand-drawn trailing, wind effects |
+| 54 | Micro-Expressions & Subtle Performance | Half-blinks, suppressed emotions, mask-and-leak, 2-4 frame flashes |
+| 55 | Stop Motion with Nature & Found Objects | Leaves, stones, found objects, outdoor challenges, environmental storytelling |
+| 56 | Observational Sketching & Movement Studies | Gesture drawing from life, zoo studies, movement sketchbook practice |
+| 57 | Photogrammetry & 3D Scanning | Phone scanning, RealityScan, importing real objects into Blender |
+| 58 | Light, Shadow & Ambient Occlusion | Shadow color, contact shadows, AO, 3-point lighting, real-world observation |
+
 ### `tests/`
-- **test_prompts.py** — Test harness with 280+ test cases across all 48 prompts.
+- **test_prompts.py** — Test harness with 340+ test cases across all 58 prompts.
 
 ```bash
 python tests/test_prompts.py --list           # List all prompts and test cases
