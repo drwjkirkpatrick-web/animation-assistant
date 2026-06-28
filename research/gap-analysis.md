@@ -201,3 +201,115 @@ Animation Festival
 | 18 | Accessibility & Adaptive Animation | 36 |
 | 19 | Animation Community & Online Etiquette | 37 |
 | 20 | Contests, Festivals & Challenges | 38 |
+
+---
+
+## THIRD-PASS GAP ANALYSIS (Modules 39-48)
+
+After building modules 29-38, a third research pass against animation 
+pipeline guides (CGSpectrum), animation editing workflows (Frame.io, 
+Ken Schretzmann), background design resources (Domestika, AWN), anatomy 
+for animators (Bodies in Motion, Drawing Academy), voice acting 
+resources, music sync techniques (Animator Island), mixed media 
+animation (FEVR, Storyblocks), game animation pipelines, AI ethics in 
+animation (Animation Guild, Cornell, Nature), and production 
+management (ScreenSkills, The Happy Producers) identified 10 more gaps:
+
+### Gap 21: Animation Editing & Post-Production
+**Why it matters:** Animation editing is fundamentally different from 
+live-action: "edit first, shoot later" (Ken Schretzmann, Toy Story 3 
+editor). The radio play, animatic, and post-production stages are 
+distinct professional skills. We have compositing (22) but no editing 
+module — pacing, cuts, retakes, frame rate manipulation, version control.
+**Sources:** Frame.io animation editing article; CGSpectrum pipeline guide
+
+### Gap 22: Background & Environment Design
+**Why it matters:** Background/environment design is a distinct discipline 
+from character design. Perspective, interior/exterior scenes, layout 
+art, establishing mood through environment. We have character design 
+(30) and color (19) but no module on designing the WORLD characters 
+inhabit.
+**Sources:** Domestika background design guide; AWN animation layout 
+perspective; YouTube background drawing tips
+
+### Gap 23: Anatomy & Figure Drawing for Animators
+**Why it matters:** Professional animators study anatomy — bones, 
+muscles, how they create movement. Bodies in Motion (Scott Eaton) 
+provides 14-16fps reference sequences. We have body mechanics (32) 
+but that's locomotion technique, not the anatomical foundation 
+understanding that makes movement believable.
+**Sources:** Bodies in Motion reference; Drawing Academy anatomy; 
+Reddit r/animation anatomy discussions; Modern Day James figure drawing
+
+### Gap 24: Voice Acting & Dialogue Recording
+**Why it matters:** We have lip sync (33) and sound design (20) but 
+no module on the PERFORMANCE of voice — how to voice characters, 
+record dialogue, direct voice actors, create distinct character voices. 
+Kids making animations with speaking characters need this.
+**Sources:** YouTube voice acting tutorials; Reddit voice actor 
+discussions; Tara Strong/Cristina Pucelli interviews
+
+### Gap 25: Music Synchronization & Beat Sync
+**Why it matters:** Animating to music is a distinct technique — 
+marking beats, syncing actions to rhythm, using music as the timing 
+foundation. Animator Island has a dedicated article. We have sound 
+design (20) but nothing about music as a structural timing tool.
+**Sources:** Animator Island animating to music; Reddit music sync 
+tips; LinkedIn sync techniques; After Effects music sync tutorials
+
+### Gap 26: Mixed Media & Experimental Techniques
+**Why it matters:** Collage animation, mixed media (photos + 
+illustration + video), 2D+3D integration, and experimental approaches 
+are growing trends (FEVR, Storyblocks 2026 trend). We have animation 
+styles (24) but no deep dive on mixed media creation techniques.
+**Sources:** FEVR mixed media guide; Storyblocks collage guide; 
+After Effects mixed media tutorials; It's Nice That
+
+### Gap 27: Game Animation & Sprite Sheets
+**Why it matters:** Many kids who learn animation want to make games. 
+Game animation is fundamentally different — sprite sheets, idle/walk/
+attack loops, frame-rate independence, Unity/Godot integration. We 
+have code-first (05) but no game-specific animation module.
+**Sources:** Unity sprite sheet tutorials; Reddit game dev sprite 
+pipeline; pygame sprite animation; Scenario AI sprite generator
+
+### Gap 28: Animation Production & Project Management
+**Why it matters:** The producer role — scheduling, budgeting, 
+scoping, resource management, deadline tracking — is a real career 
+path (ScreenSkills). Kids managing multi-week projects need production 
+skills. We have collaboration (25) but no project management module.
+**Sources:** ScreenSkills producer profile; The Happy Producers 
+project planning; CGSpectrum pipeline roles; Ftrack creative PM guide
+
+### Gap 29: AI Ethics & Animation Tools
+**Why it matters:** The Animation Guild, Cornell, and Nature all 
+address AI's role in animation. Kids need honest guidance on when AI 
+helps (reference, ideation) vs hurts (skill development), ethical 
+concerns, and industry debates. Our FAQ (27) briefly mentions AI but 
+needs a dedicated module.
+**Sources:** Animation Guild AI task force; Cornell DL seminar; 
+Nature article on GAI in animation teaching; SCIRP AI in art education
+
+### Gap 30: Animation Pacing & Rhythm
+**Why it matters:** Pacing (sequence-level flow) is distinct from 
+timing (frame-level spacing). When to hold shots, when to cut, fast 
+sections vs slow sections, rhythm of a full scene. Professional 
+editors treat pacing as the primary art of editing. We have timing 
+charts (35) but no sequence-level pacing module.
+**Sources:** ProVideo Coalition pacing and rhythm; Frame.io editing 
+workflow; CreativeLive pacing seminar; Instagram film rhythm tips
+
+## Third-Pass Summary
+
+| # | Gap | Module to Build |
+|---|-----|----------------|
+| 21 | Animation Editing & Post-Production | 39 |
+| 22 | Background & Environment Design | 40 |
+| 23 | Anatomy & Figure Drawing for Animators | 41 |
+| 24 | Voice Acting & Dialogue Recording | 42 |
+| 25 | Music Synchronization & Beat Sync | 43 |
+| 26 | Mixed Media & Experimental Techniques | 44 |
+| 27 | Game Animation & Sprite Sheets | 45 |
+| 28 | Animation Production & Project Management | 46 |
+| 29 | AI Ethics & Animation Tools | 47 |
+| 30 | Animation Pacing & Rhythm | 48 |
