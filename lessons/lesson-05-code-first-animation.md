@@ -7,9 +7,9 @@
 
 ---
 
-## CBC Strand Mapping
+## CBE Strand Mapping
 
-| CBC Field | Value |
+| CBE Field | Value |
 |-----------|-------|
 | Strand | Computer Science — Introduction to Programming |
 | Sub-strand | 4.3 Visual Programming (Scratch) / 4.4 Text-based Programming (Python) |

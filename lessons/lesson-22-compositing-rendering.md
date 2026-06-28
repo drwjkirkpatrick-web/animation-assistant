@@ -7,9 +7,9 @@
 
 ---
 
-## CBC Strand Mapping
+## CBE Strand Mapping
 
-| CBC Field | Value |
+| CBE Field | Value |
 |-----------|-------|
 | Strand | Creative Arts & Sports / Computer Science |
 | Sub-strand | Digital Animation — Compositing, Layering & Output |

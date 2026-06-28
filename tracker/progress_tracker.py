@@ -3,7 +3,7 @@
 Animation Assistant — Student Progress Tracker, Achievement System & Report Generator
 
 Records student progress against Raspberry Pi Foundation computing taxonomy
-and Kenya CBC Computer Science curriculum standards.
+and Kenya CBE Computer Science curriculum standards.
 
 Usage:
     python progress_tracker.py add_student --name "John" --age 13 --grade 8
@@ -23,7 +23,7 @@ from datetime import datetime
 from pathlib import Path
 
 # ═══════════════════════════════════════════════════════════════════
-# STANDARDS DATA (RPF + Kenya CBC)
+# STANDARDS DATA (RPF + Kenya CBE)
 # ═══════════════════════════════════════════════════════════════════
 
 # RPF 11-strand taxonomy mapping to our modules
@@ -83,8 +83,8 @@ RPF_DM_STRANDS = {
     "community_sharing": {"name": "Community and Sharing", "modules": [12, 25, 37, 38]},
 }
 
-# Kenya CBC 7 Core Competencies
-CBC_CORE_COMPETENCIES = {
+# Kenya CBE 7 Core Competencies
+CBE_CORE_COMPETENCIES = {
     "communication_collaboration": {
         "name": "Communication and Collaboration",
         "modules": [25, 37, 42],
@@ -115,16 +115,16 @@ CBC_CORE_COMPETENCIES = {
     },
 }
 
-# Kenya CBC Assessment Rubric Levels
-CBC_LEVELS = {
+# Kenya CBE Assessment Rubric Levels
+CBE_LEVELS = {
     "BE": {"name": "Below Expectations", "score": 1, "description": "Limited understanding, needs significant help"},
     "AE": {"name": "Approaching Expectations", "score": 2, "description": "Understands some concepts, needs guidance"},
     "ME": {"name": "Meeting Expectations", "score": 3, "description": "Clear understanding, independent in familiar situations"},
     "EE": {"name": "Exceeding Expectations", "score": 4, "description": "Goes beyond, applies in new contexts, shows creativity"},
 }
 
-# Kenya CBC Computer Science Strands (Grades 7-9)
-CBC_CS_STRANDS = {
+# Kenya CBE Computer Science Strands (Grades 7-9)
+CBE_CS_STRANDS = {
     "foundation_cs": {
         "name": "Foundation of Computer Science",
         "modules": [7, 18, 26],
@@ -231,19 +231,19 @@ ACHIEVEMENTS = [
     {"id": "physics_master", "name": "Physics Master", "emoji": "📐", "description": "Applied the Odd Rule and physics principles",
      "condition": lambda s: s.has_module(29) and s.module_level(29) == "EE", "tier": "maker"},
 
-    # ── Kenya CBC Competency Badges ──
+    # ── Kenya CBE Competency Badges ──
     {"id": "digital_citizen", "name": "Digital Citizen", "emoji": "🛡️", "description": "Demonstrated online safety and ethical behavior",
-     "condition": lambda s: s.has_module(37) and s.module_level(37) in ["ME", "EE"], "tier": "cbc"},
+     "condition": lambda s: s.has_module(37) and s.module_level(37) in ["ME", "EE"], "tier": "cbe"},
     {"id": "creative_thinker", "name": "Creative Thinker", "emoji": "💡", "description": "Created original animation from own idea",
-     "condition": lambda s: s.has_module(16) and s.module_level(16) == "EE", "tier": "cbc"},
+     "condition": lambda s: s.has_module(16) and s.module_level(16) == "EE", "tier": "cbe"},
     {"id": "problem_solver", "name": "Problem Solver", "emoji": "🧩", "description": "Independently debugged animation issues",
-     "condition": lambda s: s.has_module(7) and s.module_level(7) in ["ME", "EE"], "tier": "cbc"},
+     "condition": lambda s: s.has_module(7) and s.module_level(7) in ["ME", "EE"], "tier": "cbe"},
     {"id": "collaborator", "name": "Collaborator", "emoji": "🤝", "description": "Worked on a team animation project",
-     "condition": lambda s: s.has_module(25) and s.module_level(25) in ["ME", "EE"], "tier": "cbc"},
+     "condition": lambda s: s.has_module(25) and s.module_level(25) in ["ME", "EE"], "tier": "cbe"},
     {"id": "code_creator", "name": "Code Creator", "emoji": "💻", "description": "Programmed animation using Scratch or Python",
-     "condition": lambda s: s.has_module(5) and s.module_level(5) in ["ME", "EE"], "tier": "cbc"},
+     "condition": lambda s: s.has_module(5) and s.module_level(5) in ["ME", "EE"], "tier": "cbe"},
     {"id": "ai_ethicist", "name": "AI Ethicist", "emoji": "🤖", "description": "Understood and applied AI ethics principles",
-     "condition": lambda s: s.has_module(47) and s.module_level(47) in ["ME", "EE"], "tier": "cbc"},
+     "condition": lambda s: s.has_module(47) and s.module_level(47) in ["ME", "EE"], "tier": "cbe"},
 ]
 
 # RPF progression tiers
@@ -252,7 +252,7 @@ RPF_TIERS = {
     "builder": {"name": "Builder", "order": 2, "emoji": "🏗️"},
     "developer": {"name": "Developer", "order": 3, "emoji": "⚙️"},
     "maker": {"name": "Maker", "order": 4, "emoji": "🏆"},
-    "cbc": {"name": "CBC Competency", "order": 5, "emoji": "🇰🇪"},
+    "cbe": {"name": "CBE Competency", "order": 5, "emoji": "🇰🇪"},
 }
 
 
@@ -338,7 +338,7 @@ class Student:
         for r in records:
             mid = r["module_id"]
             level = r["cbc_level"]
-            if mid not in best or CBC_LEVELS[level]["score"] > CBC_LEVELS[best[mid]]["score"]:
+            if mid not in best or CBE_LEVELS[level]["score"] > CBE_LEVELS[best[mid]]["score"]:
                 best[mid] = level
         return {mid: lvl for mid, lvl in best.items() if lvl in ["ME", "EE"]}
 
@@ -359,7 +359,7 @@ class Student:
         best = None
         for r in records:
             if r["module_id"] == module_id:
-                if best is None or CBC_LEVELS[r["cbc_level"]]["score"] > CBC_LEVELS[best]["score"]:
+                if best is None or CBE_LEVELS[r["cbc_level"]]["score"] > CBE_LEVELS[best]["score"]:
                     best = r["cbc_level"]
         return best
 
@@ -372,7 +372,7 @@ class Student:
         for r in records:
             mid = r["module_id"]
             lvl = r["cbc_level"]
-            if mid not in best or CBC_LEVELS[lvl]["score"] > CBC_LEVELS[best[mid]]["score"]:
+            if mid not in best or CBE_LEVELS[lvl]["score"] > CBE_LEVELS[best[mid]]["score"]:
                 best[mid] = lvl
         return best
 
@@ -423,13 +423,13 @@ class Student:
                 best = tier_id
         return best
 
-    def cbc_strand_progress(self, conn=None):
-        """Progress per Kenya CBC CS strand."""
+    def cbe_strand_progress(self, conn=None):
+        """Progress per Kenya CBE CS strand."""
         if conn is None:
             conn = get_db()
         levels = self.all_module_levels(conn)
         result = {}
-        for strand_id, strand in CBC_CS_STRANDS.items():
+        for strand_id, strand in CBE_CS_STRANDS.items():
             strand_mods = strand["modules"]
             completed = [m for m in strand_mods if m in levels and levels[m] in ["ME", "EE"]]
             total = len(strand_mods)
@@ -463,13 +463,13 @@ class Student:
             }
         return result
 
-    def cbc_competency_progress(self, conn=None):
-        """Progress per Kenya CBC 7 core competencies."""
+    def cbe_competency_progress(self, conn=None):
+        """Progress per Kenya CBE 7 core competencies."""
         if conn is None:
             conn = get_db()
         levels = self.all_module_levels(conn)
         result = {}
-        for comp_id, comp in CBC_CORE_COMPETENCIES.items():
+        for comp_id, comp in CBE_CORE_COMPETENCIES.items():
             comp_mods = comp["modules"]
             completed = [m for m in comp_mods if m in levels and levels[m] in ["ME", "EE"]]
             total = len(comp_mods)
@@ -520,7 +520,7 @@ def cmd_record(args):
     conn = get_db()
     student = Student.get(conn, args.student_id)
     level = args.level.upper()
-    if level not in CBC_LEVELS:
+    if level not in CBE_LEVELS:
         print(f"Invalid level '{args.level}'. Use: BE, AE, ME, or EE")
         sys.exit(1)
     now = datetime.now().isoformat()
@@ -530,7 +530,7 @@ def cmd_record(args):
     )
     conn.commit()
     mod_name = MODULE_NAMES.get(args.module, f"Module {args.module}")
-    print(f"✅ Recorded: {student.name} — Module {args.module} ({mod_name}) — Level: {CBC_LEVELS[level]['name']}")
+    print(f"✅ Recorded: {student.name} — Module {args.module} ({mod_name}) — Level: {CBE_LEVELS[level]['name']}")
     if args.notes:
         print(f"   Notes: {args.notes}")
 
@@ -564,7 +564,7 @@ def cmd_badges(args):
     # Group by tier
     for tier_id, tier_info in sorted(RPF_TIERS.items(), key=lambda x: x[1]["order"]):
         tier_badges = [b for b in earned if b["tier"] == tier_id]
-        if not tier_badges and tier_id != "cbc":
+        if not tier_badges and tier_id != "cbe":
             continue
         print(f"\n{tier_info['emoji']} {tier_info['name']} ({len(tier_badges)} badges)")
         print("─" * 40)
@@ -630,9 +630,9 @@ def generate_report_html(student, conn):
     levels = student.all_module_levels(conn)
     badges = student.earned_badges(conn)
     tier = student.rpf_tier(conn)
-    cbc_strands = student.cbc_strand_progress(conn)
+    cbc_strands = student.cbe_strand_progress(conn)
     rpf_strands = student.rpf_strand_progress(conn)
-    competencies = student.cbc_competency_progress(conn)
+    competencies = student.cbe_competency_progress(conn)
 
     # Badges HTML grouped by tier
     badges_html = ""
@@ -648,21 +648,21 @@ def generate_report_html(student, conn):
         )
         badges_html += f'<div class="badge-tier"><h3>{tier_info["emoji"]} {tier_info["name"]}</h3><div class="badge-grid">{badge_items}</div></div>'
 
-    # CBC strand progress
-    cbc_html = ""
+    # CBE strand progress
+    cbe_html = ""
     for sid, s in cbc_strands.items():
-        cbc_html += _progress_bar(s["percentage"], s["name"])
+        cbe_html += _progress_bar(s["percentage"], s["name"])
         for m in s["modules"]:
             lvl = m["level"]
             lvl_class = f"level-{lvl.lower()}" if lvl != "—" else "level-na"
-            cbc_html += f'<div class="module-row"><span>{m["name"]}</span><span class="level-tag {lvl_class}">{lvl}</span></div>'
+            cbe_html += f'<div class="module-row"><span>{m["name"]}</span><span class="level-tag {lvl_class}">{lvl}</span></div>'
 
     # RPF strand progress
     rpf_html = ""
     for sid, s in rpf_strands.items():
         rpf_html += _progress_bar(s["percentage"], s["name"])
 
-    # CBC competency progress
+    # CBE competency progress
     comp_html = ""
     for cid, c in competencies.items():
         comp_html += _progress_bar(c["percentage"], c["name"])
@@ -744,13 +744,13 @@ def generate_report_html(student, conn):
 
   <div class="standards-note">
     📋 This report maps progress against the <strong>Raspberry Pi Foundation Computing Taxonomy</strong>
-    (11 strands) and the <strong>Kenya CBC Computer Science Curriculum</strong> (Grades 7-9, 4 strands).
-    Assessment uses the Kenya CBC 4-level rubric: BE (Below), AE (Approaching), ME (Meeting), EE (Exceeding).
+    (11 strands) and the <strong>Kenya CBE Computer Science Curriculum</strong> (Grades 7-9, 4 strands).
+    Assessment uses the Kenya CBE 4-level rubric: BE (Below), AE (Approaching), ME (Meeting), EE (Exceeding).
   </div>
 
-  <h2>🇰🇪 Kenya CBC Computer Science — Strand Progress</h2>
+  <h2>🇰🇪 Kenya CBE Computer Science — Strand Progress</h2>
   <div class="section">
-    {cbc_html}
+    {cbe_html}
   </div>
 
   <h2>🥧 Raspberry Pi Foundation — Computing Strands</h2>
@@ -758,7 +758,7 @@ def generate_report_html(student, conn):
     {rpf_html}
   </div>
 
-  <h2>🇰🇪 Kenya CBC Core Competencies</h2>
+  <h2>🇰🇪 Kenya CBE Core Competencies</h2>
   <div class="section">
     {comp_html}
   </div>
@@ -770,7 +770,7 @@ def generate_report_html(student, conn):
 
   <div class="footer">
     Generated by Animation Assistant Progress Tracker | {datetime.now().strftime('%Y-%m-%d %H:%M')}
-    <br>Aligned with RPF Computing Taxonomy & Kenya CBC Computer Science Curriculum (KICD)
+    <br>Aligned with RPF Computing Taxonomy & Kenya CBE Computer Science Curriculum (KICD)
   </div>
 </div>
 </body>
@@ -789,8 +789,8 @@ def generate_class_report_html(students, conn):
         tier = s.rpf_tier(conn)
         tier_class = f"tier-{tier}"
 
-        # CBC strand percentages
-        cbc = s.cbc_strand_progress(conn)
+        # CBE strand percentages
+        cbc = s.cbe_strand_progress(conn)
         prog_pct = sum(v["percentage"] for v in cbc.values()) / len(cbc) if cbc else 0
 
         rows_html += f"""<tr>
@@ -839,8 +839,8 @@ def generate_class_report_html(students, conn):
 
   <div class="standards-note">
     📋 Aligned with <strong>Raspberry Pi Foundation Computing Taxonomy</strong> and
-    <strong>Kenya CBC Computer Science Curriculum</strong> (KICD, Grades 7-9).
-    Assessment uses the Kenya CBC 4-level rubric (BE/AE/ME/EE).
+    <strong>Kenya CBE Computer Science Curriculum</strong> (KICD, Grades 7-9).
+    Assessment uses the Kenya CBE 4-level rubric (BE/AE/ME/EE).
   </div>
 
   <div class="stats">
@@ -852,7 +852,7 @@ def generate_class_report_html(students, conn):
   <h2>Student Summary</h2>
   <table>
     <thead>
-      <tr><th>ID</th><th>Name</th><th>Age</th><th>Grade</th><th>RPF Tier</th><th>Modules</th><th>Badges</th><th>CBC Progress</th></tr>
+      <tr><th>ID</th><th>Name</th><th>Age</th><th>Grade</th><th>RPF Tier</th><th>Modules</th><th>Badges</th><th>CBE Progress</th></tr>
     </thead>
     <tbody>
       {rows_html}
@@ -861,7 +861,7 @@ def generate_class_report_html(students, conn):
 
   <div class="footer">
     Generated by Animation Assistant Progress Tracker | {datetime.now().strftime('%Y-%m-%d %H:%M')}
-    <br>Aligned with RPF Computing Taxonomy & Kenya CBC Computer Science Curriculum (KICD)
+    <br>Aligned with RPF Computing Taxonomy & Kenya CBE Computer Science Curriculum (KICD)
   </div>
 </div>
 </body>
@@ -902,7 +902,7 @@ Examples:
     p_record.add_argument("--student-id", required=True, help="Student ID (e.g., S001)")
     p_record.add_argument("--module", type=int, required=True, help="Module number (1-48)")
     p_record.add_argument("--level", required=True, choices=["BE", "AE", "ME", "EE"],
-                          help="CBC assessment level")
+                          help="CBE assessment level")
     p_record.add_argument("--notes", help="Optional notes about the assessment")
     p_record.set_defaults(func=cmd_record)
 

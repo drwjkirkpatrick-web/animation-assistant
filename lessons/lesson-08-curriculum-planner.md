@@ -7,9 +7,9 @@
 
 ---
 
-## CBC Strand Mapping
+## CBE Strand Mapping
 
-| CBC Field | Value |
+| CBE Field | Value |
 |-----------|-------|
 | Strand | Creative Arts & Sports — Visual & Performing Arts (Animation) / Computer Science (Programming pathway) |
 | Sub-strand | Project Planning & Self-Directed Learning (Learning to Learn) |

@@ -2,7 +2,7 @@
 
 > *Every kid in Mombasa, Kilifi, Kwale, and Lamu deserves to tell their stories through animation. This project makes that possible — using the marine animals swimming right outside their doorstep.*
 
-An AI-powered animation teaching assistant for kids aged **10–17**, built around the **12 Principles of Animation**, localized for **Kenya's Indian Ocean coastline**, and aligned to the **Kenya CBC curriculum** and **Raspberry Pi Foundation computing standards**.
+An AI-powered animation teaching assistant for kids aged **10–17**, built around the **12 Principles of Animation**, localized for **Kenya's Indian Ocean coastline**, and aligned to the **Kenya CBE curriculum** and **Raspberry Pi Foundation computing standards**.
 
 ---
 
@@ -12,7 +12,7 @@ An AI-powered animation teaching assistant for kids aged **10–17**, built arou
 Testable system prompts covering everything from the bouncing ball to micro-expressions. Each prompt has a code block and a "What to Test" table with specific inputs and expected behaviors.
 
 ### 📝 58 Complete Lesson Plans (`lessons/`)
-CBC-aligned, ready-to-teach lesson plans — one for every prompt module. Every lesson uses **Kenyan Indian Ocean marine animals** as animation characters. A teacher can pick up any lesson plan and teach it directly.
+CBE-aligned, ready-to-teach lesson plans — one for every prompt module. Every lesson uses **Kenyan Indian Ocean marine animals** as animation characters. A teacher can pick up any lesson plan and teach it directly.
 
 ### 🧪 Test Harness (`tests/`)
 341 test cases across all 58 prompts, with CLI for listing, focusing, and non-interactive review.
@@ -23,7 +23,7 @@ SQLite-backed student tracker with 30 achievement badges across 5 tiers, printab
 ### 🔬 Research (`research/`)
 - Animation tools landscape (7 tools for ages 10–17)
 - Four-pass gap analysis (42 gaps identified and filled)
-- Standards mapping (RPF 11-strand taxonomy + Kenya CBC 4-strand curriculum)
+- Standards mapping (RPF 11-strand taxonomy + Kenya CBE 4-strand curriculum)
 - **Kenya ocean animals reference** — 30+ species with animation movement categories
 
 ---
@@ -44,12 +44,12 @@ Kids in Mombasa animate **Pomboo the Dolphin** leaping at Kisite-Mpunguti. Kids 
 
 ---
 
-## Lesson Plan Structure (CBC-Aligned)
+## Lesson Plan Structure (CBE-Aligned)
 
 Every lesson plan follows the Kenya Competency-Based Curriculum format:
 
 ```
-CBC Strand Mapping        → Which curriculum strand and sub-strand
+CBE Strand Mapping        → Which curriculum strand and sub-strand
 Learning Outcomes         → 3 outcomes (knowledge, skill, value)
 Key Inquiry Question      → The driving question for the lesson
 Local Context             → The Kenyan ocean animal used + conservation note
@@ -174,7 +174,7 @@ Also supports: **Raspberry Pi**, Chromebook, phone/tablet, game engines, and ada
 # Register a student
 python tracker/progress_tracker.py add_student --name "Amani" --age 13 --grade 8 --school "Mombasa Primary"
 
-# Record module progress (CBC rubric: BE, AE, ME, EE)
+# Record module progress (CBE rubric: BE, AE, ME, EE)
 python tracker/progress_tracker.py record --student-id S001 --module 29 --level ME --notes "Great whale shark physics"
 
 # View badges and RPF tier
@@ -192,7 +192,7 @@ python tracker/progress_tracker.py class-report --output class_report.html
 - 🔧 **Builder** (4) — squash, arcs, timing, weight
 - 🎨 **Developer** (6) — walk cycle, anticipation, follow-through, mood, lip sync, voice
 - 🏆 **Maker** (11) — storyboard, rigging, effects, sound, game animation, contests, Pi pioneer, physics master, mentor, style, short film
-- 🇰🇪 **CBC Competency** (6) — digital citizen, creative thinker, problem solver, collaborator, code creator, AI ethicist
+- 🇰🇪 **CBE Competency** (6) — digital citizen, creative thinker, problem solver, collaborator, code creator, AI ethicist
 
 Badges auto-award when a student reaches **ME** or **EE** on relevant modules.
 
@@ -213,7 +213,7 @@ python tests/test_prompts.py --non-interactive    # Run without user prompts
 | Framework | Coverage |
 |-----------|----------|
 | **Raspberry Pi Foundation** | 11 content strands + 5 Digital Making strands + 4 progression levels (Creator → Builder → Developer → Maker) |
-| **Kenya CBC** | 4 strands (Foundation, Networks, Software, Programming) + 7 core competencies + 4-level rubric (BE/AE/ME/EE) |
+| **Kenya CBE** | 4 strands (Foundation, Networks, Software, Programming) + 7 core competencies + 4-level rubric (BE/AE/ME/EE) |
 
 Full mapping in `research/standards-mapping.md`.
 

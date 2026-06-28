@@ -2,7 +2,7 @@
 
 ## How to Use This Template
 
-Each lesson plan follows the Kenya CBC (Competency-Based Curriculum) structure
+Each lesson plan follows the Kenya CBE (Competency-Based Curriculum) structure
 and uses **Kenyan Indian Ocean marine animals** as animation examples to make
 content locally relevant and engaging.
 
@@ -20,9 +20,9 @@ content locally relevant and engaging.
 
 ---
 
-## CBC Strand Mapping
+## CBE Strand Mapping
 
-| CBC Field | Value |
+| CBE Field | Value |
 |-----------|-------|
 | Strand | [Creative Arts & Sports / Computer Science / Integrated Science] |
 | Sub-strand | [specific sub-strand] |
@@ -135,7 +135,7 @@ real conservation issue involving Kenyan marine life.]
 2. **Code blocks must be runnable** — Scratch blocks, Python (for Raspberry Pi),
    or step-by-step tool instructions (Krita, Blender, Stop Motion Studio).
 
-3. **CBC rubric levels** are used in every assessment table:
+3. **CBE rubric levels** are used in every assessment table:
    - **BE** = Below Expectation
    - **AE** = Approaching Expectation
    - **ME** = Meets Expectation

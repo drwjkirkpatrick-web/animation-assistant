@@ -7,9 +7,9 @@
 
 ---
 
-## CBC Strand Mapping
+## CBE Strand Mapping
 
-| CBC Field | Value |
+| CBE Field | Value |
 |-----------|-------|
 | Strand | Integrated Science + Creative Arts & Sports |
 | Sub-strand | Physics of Balance, Center of Gravity & Ground Contact |

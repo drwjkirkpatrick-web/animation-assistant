@@ -7,9 +7,9 @@
 
 ---
 
-## CBC Strand Mapping
+## CBE Strand Mapping
 
-| CBC Field | Value |
+| CBE Field | Value |
 |-----------|-------|
 | Strand | Computer Science / Creative Arts & Sports |
 | Sub-strand | Digital Literacy — File Management & Project Workflow |

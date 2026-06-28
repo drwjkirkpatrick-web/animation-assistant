@@ -1,4 +1,4 @@
-# Standards Mapping: Animation Assistant ↔ Raspberry Pi Foundation & Kenya CBC
+# Standards Mapping: Animation Assistant ↔ Raspberry Pi Foundation & Kenya CBE
 
 ## Raspberry Pi Foundation — Computing Taxonomy (11 Strands)
 
@@ -51,30 +51,67 @@ The RPF 11-strand taxonomy is a curriculum-agnostic framework covering the bread
 
 ---
 
-## Kenya CBC — Computer Science Curriculum (Grades 7-9)
+## Kenya CBE (Competency-Based Education)
 
-### Kenya CBC 7 Core Competencies
+### What Changed from CBC to CBE
 
-| CBC Competency | How Our Modules Develop It |
+Kenya's education system evolved from the 8-4-4 system to the Competency-Based Education (CBE) in 2017. By 2025–2026, CBC was refined into **Competency-Based Education (CBE)**, with the first CBC cohort entering senior school in January 2026.
+
+Key changes in CBE (2025–2026):
+- **System renamed**: CBC → CBE (Competency-Based Education) as the umbrella framework
+- **Exam names updated**: KCPE → KJSEA (Kenya Junior School Education Assessment), KCSE → KCBE (Kenya Certificate of Basic Education), KPSEA remains
+- **ICT now compulsory**: Information and Communication Technology is part of the 7 compulsory core learning areas for ALL senior school learners (Grades 10-12)
+- **Community Service Learning (CSL)**: New compulsory learning area with a portfolio contributing to the final certificate
+- **Three pathways** with explicit cluster structure: STEM, Social Sciences, Arts & Sports Science
+- **Assessment formalized**: 40% school-based + 60% national, with defined percentage ranges for each rubric level
+- **CBE four critical elements**: Curriculum (KICD), Pedagogy (TSC), Resources (MoE), Assessment (KNEC)
+
+### CBE Structure (2-6-3-3)
+
+| Level | Duration | Grades | Ages |
+|-------|----------|--------|------|
+| Pre-Primary | 2 years | PP1-PP2 | 4-6 |
+| Primary | 6 years | G1-G6 | 6-12 |
+| Junior School | 3 years | G7-G9 | 12-15 |
+| Senior School | 3 years | G10-G12 | 15-18 |
+| Tertiary/University | 3-4 years | — | 18+ |
+
+Animation Assistant targets ages 10-17, spanning Upper Primary (G4-6), Junior School (G7-9), and Senior School (G10-12).
+
+### CBE 7 Core Competencies
+
+| CBE Competency | How Our Modules Develop It |
 |---------------|---------------------------|
 | Communication and Collaboration | 25, 37, 42 — team animation, community, voice acting |
 | Critical Thinking and Problem Solving | 07, 29, 35, 46 — troubleshooting, physics, timing, production |
 | Creativity and Imagination | 01-48 collectively — all creative animation work |
-| Citizenship | 15, 37, 47 — parent guide, online safety, AI ethics |
-| Digital Literacy | 02, 05, 18, 26, 45 — tool routing, coding, file management, Pi, game dev |
+| Citizenship | 15, 37, 47 — parent guide, online safety, AI ethics, Community Service Learning |
+| Digital Literacy | 02, 05, 18, 26, 45 — tool routing, coding, file management, Pi, game dev — **now compulsory for all senior school learners** |
 | Learning to Learn | 08, 09, 10, 11 — curriculum planner, daily challenges, reference, badges |
 | Self-efficacy | 06, 11, 12, 38 — critique, badges, showcase, contests |
 
-### Kenya CBC Assessment Rubric (4-Level Scale)
+### CBE Assessment Rubric (4-Level Scale with Percentage Ranges)
 
-| Level | Code | Description | Our Equivalent |
-|-------|------|-------------|---------------|
-| Below Expectations | BE | Limited understanding, needs significant help | Cannot complete the module project even with guidance |
-| Approaching Expectations | AE | Understands some concepts, needs guidance | Can complete with guidance, struggles independently |
-| Meeting Expectations | ME | Clear understanding, independent in familiar situations | Completes project independently, demonstrates the principle |
-| Exceeding Expectations | EE | Goes beyond, applies in new contexts, shows creativity | Completes independently + extends creatively + helps others |
+| Level | Code | Percentage | Description | Our Equivalent |
+|-------|------|-----------|-------------|---------------|
+| Below Expectation | BE | 0-39% | Limited understanding, needs significant help | Cannot complete the module project even with guidance |
+| Approaching Expectation | AE | 40-59% | Understands some concepts, needs guidance | Can complete with guidance, struggles independently |
+| Meeting Expectation | ME | 60-79% | Clear understanding, independent in familiar situations | Completes project independently, demonstrates the principle |
+| Exceeding Expectation | EE | 80-100% | Goes beyond, applies in new contexts, shows creativity | Completes independently + extends creatively + helps others |
 
-### Kenya Grade 7-9 Computer Science Strands
+**Assessment structure**: 40% school-based (formative) + 60% national (summative). Combines classroom activities, projects, portfolios, practical tasks, and national exams (KPSEA, KJSEA, KCBE).
+
+### CBE Senior School Pathways (Grades 10-12)
+
+Animation aligns primarily to **Arts & Sports Science** and **STEM** pathways:
+
+| Pathway | Relevant Cluster | Animation-Relevant Subjects | Our Modules |
+|---------|-----------------|-----------------------------|-------------|
+| Arts & Sports Science | Cluster 2: Arts | Music, Dance, Theatre & Film, Fine Art, Photography | 01-48 (all animation modules) |
+| STEM | Cluster 2: Technical & Applied | Media Technology, Computer Studies | 05, 26, 45 (code-first, Pi, game animation) |
+| All Pathways | Compulsory Core | ICT (now compulsory for all learners) | 02, 05, 18, 26 (digital literacy through animation) |
+
+### CBE Computer Science Strands (Grades 7-9, Junior School)
 
 **Strand 1.0: Foundation of Computer Science**
 | Sub-Strand | RPF Alignment | Our Modules |
@@ -108,7 +145,7 @@ The RPF 11-strand taxonomy is a curriculum-agnostic framework covering the bread
 | 4.3 Visual programming (Scratch) | Programming | 05, 09, 45 (code-first, daily challenge, game anim) |
 | 4.4 Text-based programming (Python) | Programming | 05, 26, 45 (Python/Pygame, Pi, game animation) |
 
-### Kenya CBC General Subject Outcomes for Computer Science
+### CBE General Subject Outcomes for Computer Science
 
 | Outcome | How Our Modules Achieve It |
 |---------|--------------------------|
@@ -128,3 +165,12 @@ The RPF 11-strand taxonomy is a curriculum-agnostic framework covering the bread
 | Social equality & responsibility | 36 (accessibility), 25 (collaboration), 15 (parent guide) |
 | International consciousness | 17 (animation history), 24 (global styles), 37 (online communities) |
 | Good health & environmental protection | 38 (environmental film contests), 26 (low-resource computing) |
+
+### CBE Four Critical Elements
+
+| Element | Responsible Body | Description |
+|---------|-----------------|-------------|
+| Curriculum | KICD | Curriculum design and learning materials |
+| Pedagogy | TSC (Teachers Service Commission) | Teaching methods and teacher training |
+| Resources | MoE (Ministry of Education) | Infrastructure, labs, devices, funding |
+| Assessment | KNEC (Kenya National Examinations Council) | National exams and assessment frameworks |

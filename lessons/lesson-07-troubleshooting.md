@@ -7,9 +7,9 @@
 
 ---
 
-## CBC Strand Mapping
+## CBE Strand Mapping
 
-| CBC Field | Value |
+| CBE Field | Value |
 |-----------|-------|
 | Strand | Computer Science — Computer Software / Introduction to Programming |
 | Sub-strand | 3.1 System Software (troubleshooting) / 4.1 Algorithms (debugging) |
