@@ -9,3 +9,9 @@ tracker/progress.db
 __pycache__/
 *.pyc
 tests/__pycache__/
+
+# Next.js web app
+web/node_modules/
+web/out/
+web/.next/
+web/screenshot.png
