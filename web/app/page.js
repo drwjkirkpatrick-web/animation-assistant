@@ -294,11 +294,11 @@ export default function Home() {
               </div>
               <div className="module-grid">
                 {group.modules.map((m, mi) => (
-                  <div key={mi} className="module-item">
+                  <a key={mi} href={`/lessons/${m.n}`} className="module-item">
                     <span className="num">{m.n}</span>
                     <span className="emoji">{m.e}</span>
                     <span className="label">{m.t}</span>
-                  </div>
+                  </a>
                 ))}
               </div>
             </div>
@@ -430,7 +430,7 @@ python tracker/progress_tracker.py report --student-id S001 --output report.html
           <div className="quickstart">
             <ol>
               <li>Read the lesson template: <code>lessons/LESSON-TEMPLATE.md</code></li>
-              <li>Pick a lesson: Any <code>lessons/lesson-NN-*.md</code> file — they're numbered by difficulty</li>
+              <li>Pick a lesson: <a href="/lessons/01">Lesson 01</a> through <a href="/lessons/58">Lesson 58</a> — numbered by difficulty</li>
               <li>Check the ocean animal reference: <code>research/kenya-ocean-animals.md</code></li>
               <li>Gather resources: Each lesson lists what you need (mostly free tools)</li>
               <li>Teach: Follow the 4-step lesson development structure</li>
@@ -438,8 +438,8 @@ python tracker/progress_tracker.py report --student-id S001 --output report.html
               <li>Track progress: Use <code>tracker/progress_tracker.py</code> to record and badge</li>
             </ol>
             <p className="start-hint">
-              <strong>Recommended starting point for beginners:</strong> Lesson 01 (System Persona) → Lesson 04 (Principles)
-              → Lesson 29 (Physics with whale sharks)
+              <strong>Recommended starting point for beginners:</strong> <a href="/lessons/01">Lesson 01 (System Persona)</a> → <a href="/lessons/04">Lesson 04 (Principles)</a>
+              → <a href="/lessons/29">Lesson 29 (Physics with whale sharks)</a>
             </p>
           </div>
         </div>
