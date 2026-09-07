@@ -597,36 +597,80 @@ nav .nav-links a:hover { color: var(--ocean-glow); }
   }
 }
 
-/* ═══ Lesson pages ═══ */
-.lesson-page {
+/* ═══ Lesson pages — full ocean theme ═══ */
+.lesson-hero {
+  position: relative;
+  min-height: 45vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(180deg, var(--ocean-deep) 0%, var(--ocean-mid) 55%, var(--ocean-surf) 100%);
+  overflow: hidden;
+  padding-top: 4rem;
+}
+.lesson-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+  max-width: 800px;
+}
+.lesson-hero-emoji {
+  font-size: 3rem;
+  margin-bottom: 0.8rem;
+  animation: float 4s ease-in-out infinite;
+}
+.lesson-hero h1 {
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, var(--ocean-glow), var(--ocean-foam), var(--white));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.lesson-hero-nav {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.lesson-hero-nav .btn {
+  padding: 0.6rem 1.3rem;
+  font-size: 0.9rem;
+}
+
+.lesson-section {
+  padding: 3rem 1.5rem;
+}
+.lesson-container {
   max-width: 820px;
-  margin: 0 auto;
-  padding: 5rem 1.5rem 3rem;
-}
-.lesson-nav {
-  margin-bottom: 2rem;
-}
-.lesson-back {
-  font-size: 0.95rem;
-  color: var(--ocean-glow);
 }
 .lesson-content {
-  background: rgba(16, 58, 94, 0.3);
-  border: 1px solid rgba(79, 195, 209, 0.12);
+  background: rgba(16, 58, 94, 0.35);
+  border: 1px solid rgba(79, 195, 209, 0.15);
   border-radius: var(--radius);
   padding: 2.5rem;
   line-height: 1.7;
+  backdrop-filter: blur(4px);
 }
 .lesson-content h1 {
   font-size: 1.8rem;
   color: var(--white);
   margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--ocean-glow), var(--ocean-foam));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 .lesson-content h2 {
   font-size: 1.3rem;
   color: var(--ocean-glow);
   margin-top: 2rem;
   margin-bottom: 0.8rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid rgba(79, 195, 209, 0.15);
 }
 .lesson-content h3 {
   font-size: 1.1rem;
@@ -649,12 +693,20 @@ nav .nav-links a:hover { color: var(--ocean-glow); }
 .lesson-content strong {
   color: var(--ocean-glow);
 }
+.lesson-content em {
+  color: var(--ocean-foam);
+}
 .lesson-content blockquote {
   border-left: 3px solid var(--ocean-foam);
-  padding-left: 1rem;
+  padding: 0.8rem 1.2rem;
   margin: 1rem 0;
+  background: rgba(79, 195, 209, 0.05);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   color: var(--text-muted);
   font-style: italic;
+}
+.lesson-content blockquote strong {
+  color: var(--ocean-foam);
 }
 .lesson-content code {
   background: rgba(79, 195, 209, 0.12);
@@ -687,21 +739,43 @@ nav .nav-links a:hover { color: var(--ocean-glow); }
   background: rgba(79, 195, 209, 0.1);
   color: var(--ocean-glow);
   border-bottom: 2px solid rgba(79, 195, 209, 0.3);
+  font-weight: 600;
 }
 .lesson-content td {
   padding: 0.5rem 0.8rem;
   border-bottom: 1px solid rgba(79, 195, 209, 0.08);
   color: var(--text);
 }
+.lesson-content tr:hover td {
+  background: rgba(79, 195, 209, 0.05);
+}
 .lesson-content hr {
   border: none;
   border-top: 1px solid rgba(79, 195, 209, 0.15);
   margin: 1.5rem 0;
 }
+
+.lesson-bottom-nav {
+  padding: 2.5rem 1.5rem;
+}
 .lesson-nav-bottom {
   display: flex;
   gap: 1rem;
-  justify-content: space-between;
-  margin-top: 2rem;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
+}
+
+/* Legacy lesson-page styles (kept for any old references) */
+.lesson-page {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem 3rem;
+}
+.lesson-nav {
+  margin-bottom: 2rem;
+}
+.lesson-back {
+  font-size: 0.95rem;
+  color: var(--ocean-glow);
 }
